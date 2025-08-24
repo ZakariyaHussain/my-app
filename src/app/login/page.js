@@ -1,29 +1,23 @@
-export default function Login() {
+
+"use client";
+
+import { signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
+
+export default function LoginPage() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow">
-        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
-        <form className="flex flex-col space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-500 transition font-semibold"
-          >
-            Login
-          </button>
-        </form>
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Don’t have an account? <a href="#" className="text-blue-600 hover:underline">Sign up</a>
-        </p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded shadow w-full max-w-md text-center">
+        <h1 className="text-2xl font-bold mb-6">Login</h1>
+
+        <button
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+          // className="flex items-center justify-center w-full gap-2 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500 transition"
+          className="flex items-center justify-center gap-3 w-full border border-gray-300 py-3 rounded-lg hover:bg-gray-50 transition font-medium"
+        >
+          <FcGoogle size={22} />
+          Login with Google
+        </button>
       </div>
     </div>
   );

@@ -1,43 +1,81 @@
+
 "use client";
 
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
 export default function ProductHighlights() {
-  // Example products array
-  const products = [
-    {
-      title: "Fast Performance",
-      description: "Our app runs lightning fast on all devices.",
-    },
-    {
-      title: "Secure & Reliable",
-      description: "Your data is safe with top-notch security features.",
-    },
-    {
-      title: "User-Friendly",
-      description: "Easy to use interface with a clean design.",
-    },
-    {
-      title: "24/7 Support",
-      description: "We provide round-the-clock support for all users.",
-    },
-  ];
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch products from API
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products");
+        const data = await res.json();
+        setProducts(data.slice(0, 4)); // only show first 4 as highlights
+      } catch (error) {
+        console.error("Failed to load products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-gray-50 text-center">
+        <p className="text-gray-600">Loading highlights...</p>
+      </section>
+    );
+  }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 space-y-6">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
           Product Highlights
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+              key={product.id}
+              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col"
             >
-              <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
-              <p className="text-gray-600">{product.description}</p>
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-40 object-contain mb-4"
+              />
+              <h3 className="text-lg font-semibold mb-2 line-clamp-1">
+                {product.title}
+              </h3>
+              <p className="text-gray-600 mb-2 line-clamp-2">
+                {product.description}
+              </p>
+              <p className="font-bold mb-4">${product.price.toFixed(2)}</p>
+
+              <Link
+                href={`/products/${product.id}`}
+                className="mt-auto bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition"
+              >
+                View Details
+              </Link>
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="text-center">
+        <Link
+          href={`/products`}
+          className="bg-gray-800 text-white py-2 px-6 rounded hover:bg-gray-700 transition"
+        >
+          Show All Products
+        </Link>
       </div>
     </section>
   );

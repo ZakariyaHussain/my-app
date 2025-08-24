@@ -3,7 +3,7 @@ import ProductHighlights from "./components/ProductHighlight/ProductHighlight";
 
 export default function Home() {
   return (
-    <main style={{ textAlign: "center", marginTop: "50px" }}>
+    <main style={{ textAlign: "center"}}>
       <Hero></Hero>
       <ProductHighlights></ProductHighlights>
     </main>

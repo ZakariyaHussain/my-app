@@ -1,3 +1,29 @@
+## Next.js Product Dashboard App
+
+A modern web application built with Next.js 15, TailwindCSS, and NextAuth for authentication. Users can browse products, view details, and access a protected dashboard to manage products. Google OAuth login is integrated for secure and easy authentication.
+
+## Features
+
+# Responsive Home page with Hero section, Product Highlights, and Footer
+
+# Product page showing all products fetched from a mock API
+
+# Product details page for individual items
+
+# Protected Dashboard for logged-in users to add and manage products
+
+# Google OAuth login using NextAuth
+
+# Active navigation links and dynamic UI based on login status
+
+## Tech Stack# 
+
+# Frontend: Next.js 15, React, TailwindCSS
+
+# Authentication: NextAuth.js with Google OAuth
+
+# Backend: Node.js / Mock API (or your API for products)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -31,6 +57,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub
+
+2. Go to Vercel
+ → Click New Project → Import your repository
+
+3. Add the same environment variables in the Vercel dashboard
+
+4. Deploy
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
