@@ -4,25 +4,18 @@ A modern web application built with Next.js 15, TailwindCSS, and NextAuth for au
 
 ## Features
 
-# Responsive Home page with Hero section, Product Highlights, and Footer
-
-# Product page showing all products fetched from a mock API
-
-# Product details page for individual items
-
-# Protected Dashboard for logged-in users to add and manage products
-
-# Google OAuth login using NextAuth
-
-# Active navigation links and dynamic UI based on login status
+ Responsive Home page with Hero section, Product Highlights, and Footer
+ Product page showing all products fetched from a mock API
+ Product details page for individual items
+ Protected Dashboard for logged-in users to add and manage products
+ Google OAuth login using NextAuth
+ Active navigation links and dynamic UI based on login status
 
 ## Tech Stack# 
 
-# Frontend: Next.js 15, React, TailwindCSS
-
-# Authentication: NextAuth.js with Google OAuth
-
-# Backend: Node.js / Mock API (or your API for products)
+ Frontend: Next.js 15, React, TailwindCSS
+ Authentication: NextAuth.js with Google OAuth
+ Backend: Node.js / Mock API (or your API for products)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -65,3 +58,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 4. Deploy
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+![Project Logo](./public/my-app.png)
