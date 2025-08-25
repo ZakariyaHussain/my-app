@@ -14,7 +14,9 @@ A modern web application built with Next.js 15, TailwindCSS, and NextAuth for au
 ## Tech Stack# 
 
  Frontend: Next.js 15, React, TailwindCSS
+
  Authentication: NextAuth.js with Google OAuth
+ 
  Backend: Node.js / Mock API (or your API for products)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
